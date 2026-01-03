@@ -1,3 +1,100 @@
+'''
+Secure Authentication System (PBKDF2-HMAC)
+=======================================
+
+Description
+-----------
+This project is a simple Python-based authentication system with a graphical
+user interface (GUI) built using Tkinter. It demonstrates secure password
+storage using salted hashing with PBKDF2-HMAC (SHA-256).
+
+The goal of this project is educational: to learn and demonstrate secure
+password handling practices and basic authentication logic.
+
+
+Features
+--------
+- User registration and login
+- Secure password hashing using PBKDF2-HMAC (SHA-256)
+- Unique random salt per user
+- Protection against rainbow table attacks
+- Simple Tkinter GUI
+- In-memory user storage (no plaintext passwords)
+
+
+Technologies Used
+-----------------
+- Python 3
+- hashlib (PBKDF2-HMAC)
+- os.urandom (cryptographically secure salt)
+- hmac.compare_digest (safe hash comparison)
+- Tkinter (GUI)
+
+
+How It Works
+------------
+1. During registration:
+   - A random 16-byte salt is generated
+   - The password is hashed using PBKDF2-HMAC with SHA-256
+   - The salt and hash are stored for the user
+
+2. During login:
+   - The stored salt is retrieved
+   - The entered password is hashed again using the same parameters
+   - The new hash is compared with the stored hash securely
+
+
+Security Notes
+--------------
+- Passwords are never stored in plaintext
+- Each user has a unique salt
+- PBKDF2 makes brute-force attacks significantly slower
+- This project is for learning purposes and is not production-ready
+
+
+Limitations
+-----------
+- Users are stored in memory only (data is lost when the program closes)
+- No account lockout or rate limiting
+- No persistent database
+- GUI is minimal by design
+
+
+How to Run
+----------
+1. Make sure Python 3 is installed
+2. Clone the repository
+3. Run the script:
+
+   python main.py
+
+4. Use the GUI to register and log in users
+
+
+Learning Goals
+--------------
+- Understand secure password hashing
+- Learn how salts protect against precomputed attacks
+- Practice using PBKDF2-HMAC in Python
+- Combine security logic with a GUI
+- Build a foundation for further security and reverse engineering studies
+
+
+Future Improvements
+-------------------
+- Persistent storage (SQLite or JSON)
+- Argon2 or bcrypt support
+- Login attempt limits
+- Password strength checks
+- Export as a reverse engineering or CTF challenge
+
+Author
+------
+Harshwardhan Tiwari
+
+'''
+# Code below... 
+
 import hashlib, os, hmac
 import tkinter as tk
 
@@ -71,3 +168,4 @@ lbl_result = tk.Label(root, text="")
 lbl_result.grid(row=3, column=0, columnspan=2, pady=10)
 
 root.mainloop()
+
