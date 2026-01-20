@@ -1,4 +1,26 @@
 #transposition cipher
+"""
+Description
+
+A Transposition cipher is a method of encryption by which the positions held by units
+of plaintext (which are commonly characters or groups of characters) are shifted according to
+a regular system, so that the ciphertext constitutes a permutation of the plaintext. That is, the
+order of the units is changed (the plaintext is reordered). Mathematically a bijective function
+is used on the characters&#39; positions to encrypt and an inverse function to decrypt.
+
+Transposition Ciphers does not substitute one symbol for another, instead it changes the
+location of the symbols.
+A symbol in the first position of the plaintext may appear in the tenth position of the
+ciphertext. A symbol in the eight position in the plaintext may appear in the first position of
+the ciphertext. A transposition cipher reorders (transposes) the symbols. Simple
+transposition ciphers, which were used in the past, are keyless.
+
+There are two methods for permutation of characters. In the first method, the text is written
+into a table column by column and then transmitted row by row. In the second method, the
+text is written into a table row by row and then transmitted column by column.
+"""
+
+
 import numpy as np
 
 def method1_encryption(text):
@@ -39,5 +61,7 @@ def method2_encryption(text):
     print(cipher)
 
 method2_encryption("meat me at the park")
+
+
 
 
