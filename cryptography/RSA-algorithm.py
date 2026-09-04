@@ -1,6 +1,5 @@
 import math
-
-# 1. Choose two small primes (For a simple demo)
+# 1. Choose two small primes 
 p = 61
 q = 53
 
